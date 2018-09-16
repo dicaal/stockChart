@@ -1,4 +1,12 @@
 <ion-header>
+
+    <ion-searchbar
+    [(ngModel)]="myInput"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)"
+    (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+  
   <ion-navbar>
     <ion-title>Home</ion-title>
   </ion-navbar>
@@ -14,4 +22,20 @@
     Take a look at the <code>src/pages/</code> directory to add or change tabs,
     update any existing page or create new pages.
   </p>
+  <!-- <script src="../node_modules/chart.js/src/chart.js"></script> -->
+  <div class="row">
+    <div class="col-md-6">
+      <div style="display: block;">
+      <canvas baseChart width="300" height="400"
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+  </div>
 </ion-content>
