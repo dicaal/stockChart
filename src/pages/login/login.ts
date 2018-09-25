@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
+// import { HomePage } from '../home/home';
 import { AppProvider } from '../../providers/app/app';
 import { RegisterPage } from '../../pages/register/register';
+import { TabsPage } from '../../pages/tabs/tabs';
 
 
 /**
@@ -43,7 +44,7 @@ export class LoginPage {
         window.sessionStorage.setItem('token', response.token);
         window.sessionStorage.setItem('userId', response.UserId);
         console.log("works",response);
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(TabsPage);
       })
     
   }
